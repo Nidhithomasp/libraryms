@@ -2,6 +2,17 @@
 
 library = {}   # dictionary to store books and quantity
 
+def librarian_login():
+    username = input("Enter librarian username: ")
+    password = input("Enter librarian password: ")
+
+    if username == "admin" and password == "lib123":
+        print("Login successful!\n")
+        return True
+    else:
+        print("Invalid login. Access denied.")
+        return False
+
 def add_book():
     name = input("Enter book name: ")
     qty = int(input("Enter quantity: "))
@@ -36,26 +47,27 @@ def return_book():
         library[name] = 1
     print("Book returned successfully!\n")
 
-while True:
-    print("----- Library Menu -----")
-    print("1. Add Book")
-    print("2. View Books")
-    print("3. Issue Book")
-    print("4. Return Book")
-    print("5. Exit")
+if librarian_login():
+    while True:
+        print("----- Library Menu -----")
+        print("1. Add Book")
+        print("2. View Books")
+        print("3. Issue Book")
+        print("4. Return Book")
+        print("5. Exit")
 
-    choice = int(input("Enter your choice: "))
+        choice = int(input("Enter your choice: "))
 
-    if choice == 1:
-        add_book()
-    elif choice == 2:
-        view_books()
-    elif choice == 3:
-        issue_book()
-    elif choice == 4:
-        return_book()
-    elif choice == 5:
-        print("Thank you! Exiting Library System.")
-        break
-    else:
-        print("Invalid choice. Try again.\n")
+        if choice == 1:
+            add_book()
+        elif choice == 2:
+            view_books()
+        elif choice == 3:
+            issue_book()
+        elif choice == 4:
+            return_book()
+        elif choice == 5:
+            print("Thank you! Exiting Library System.")
+            break
+        else:
+            print("Invalid choice. Try again.\n")
