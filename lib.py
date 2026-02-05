@@ -4,7 +4,7 @@ library = {}   # Dictionary to store books and quantities
 
 # ---------------- Librarian Login ----------------
 def librarian_login():
-    username = input("Enter librarian username: ")
+    username = input("Enter librarian username:  ")
     password = input("Enter librarian password: ")
 
     if username == "admin" and password == "lib123":
